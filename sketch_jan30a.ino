@@ -996,10 +996,10 @@ const Struct_DB datebase[] PROGMEM = {
   { BRAND_RICOH, PAGE_2_K, PINOUT_GVDC, NOTE_SP_C250_260_M, dump_ricoh_sp_c250_c260_407545_magenta, CHIP_MEMORY_128, 0 },
   { BRAND_RICOH, PAGE_2_K, PINOUT_GVDC, NOTE_SP_C250_260_Y, dump_ricoh_sp_c250_c260_407546_yellow, CHIP_MEMORY_128, 0 },
   { BRAND_RICOH, PAGE_2_K, PINOUT_GVDC, NOTE_SP_C250_260_C, dump_ricoh_sp_c250_c260_407544_cyan, CHIP_MEMORY_128, 0 },
-  { BRAND_RICOH , PAGE_EMPTY , PINOUT_GVCD , lcd_MC250_BK , dump_MC250_BK , CHIP_MEMORY_128, 0 }
-  { BRAND_RICOH , PAGE_EMPTY , PINOUT_GVCD , lcd_MC250_C , dump_MC250_C , CHIP_MEMORY_128, 0 }
-  { BRAND_RICOH , PAGE_EMPTY , PINOUT_GVCD , lcd_MC250_M , dump_MC250_M , CHIP_MEMORY_128, 0 }
-  { BRAND_RICOH , PAGE_EMPTY , PINOUT_GVCD , lcd_MC250_Y , dump_MC250_Y , CHIP_MEMORY_128, 0 }
+  { BRAND_RICOH , PAGE_2_K , PINOUT_GVCD , lcd_MC250_BK , dump_MC250_BK , CHIP_MEMORY_128, 0 },
+  { BRAND_RICOH , PAGE_2_K , PINOUT_GVCD , lcd_MC250_C , dump_MC250_C , CHIP_MEMORY_128, 0 },
+  { BRAND_RICOH , PAGE_2_K , PINOUT_GVCD , lcd_MC250_M , dump_MC250_M , CHIP_MEMORY_128, 0 },
+  { BRAND_RICOH , PAGE_2_K , PINOUT_GVCD , lcd_MC250_Y , dump_MC250_Y , CHIP_MEMORY_128, 0 },
   { BRAND_RICOH, PAGE_6_5_K, PINOUT_GVDC, NOTE_SP_C252_B, dump_ricoh_sp_c252_407716_black, CHIP_MEMORY_128, 0 },
   { BRAND_RICOH, PAGE_6_K, PINOUT_GVDC, NOTE_SP_C252_C, dump_ricoh_sp_c252_407717_cyan, CHIP_MEMORY_128, 0 },
   { BRAND_RICOH, PAGE_6_K, PINOUT_GVDC, NOTE_SP_C252_M, dump_ricoh_sp_c252_407718_magenta, CHIP_MEMORY_128, 0 },
@@ -1084,7 +1084,7 @@ const char mainMenu_2[] PROGMEM = "Настройки";
 const char mainMenu_3[] PROGMEM = "Перезагрузка";
 const char mainMenu_4[] PROGMEM = "IBOTTOM";
 
-const char* const mainMenu[] PROGMEM = { mainMenu_1, mainMenu_2, mainMenu_3, mainMenu_3 };
+const char* const mainMenu[] PROGMEM = { mainMenu_1, mainMenu_2, mainMenu_3, mainMenu_4 };
 
 // Подменю 2 (хранится в PROGMEM)
 const char submenu2_1[] PROGMEM = "Яркость";
@@ -1316,7 +1316,7 @@ void handleMenuAction() {
         // Востоновить iBotton
         oled.clear();
         oled.home();
-        repair_iButton();
+        // repair_iButton();
         upd = true;
       }
       break;
